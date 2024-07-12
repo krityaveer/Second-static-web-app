@@ -16,7 +16,7 @@ const FileAppendServer = () => {
     event.preventDefault();
 
     //fetch('http://localhost:5000/append', {
-    fetch('api\file-appender', {
+    fetch('api/file-appender/serverText.js', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
