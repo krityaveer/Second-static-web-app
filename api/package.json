@@ -1,12 +1,15 @@
 {
   "name": "functions",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is an Azure Functions app, that responds to GET, POST, PUT, and DELETE endpoints for products.",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
   "devDependencies": {
     "@azure/functions": "^4.3.0"
-  }
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

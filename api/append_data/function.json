@@ -7,10 +7,7 @@
       "name": "req",
       "methods": [
         "get",
-        "post"
-      
-    ],
-    "route": "append-data"
+        "post"]
     },
     {
       "type": "http",
