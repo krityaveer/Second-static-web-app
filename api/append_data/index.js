@@ -1,5 +1,4 @@
- const filePath = path.join("../file-appender/", 'append_info.txt');
-module.exports = async function (context, req) {
+ module.exports = async function (context, req) {
   
     context.log('JavaScript HTTP trigger function processed a request.');
 
