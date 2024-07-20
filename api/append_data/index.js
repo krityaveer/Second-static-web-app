@@ -14,6 +14,7 @@
     //     }
     //     res.status(200).json({ message: 'Data appended successfully' });
     //   });
+    console.log("hello")
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: name
