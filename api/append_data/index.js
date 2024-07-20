@@ -1,5 +1,6 @@
+ const filePath = path.join("../file-appender/", 'append_info.txt');
 module.exports = async function (context, req) {
-  // const filePath = path.join("../file-appender/", 'append_info.txt');
+  
     context.log('JavaScript HTTP trigger function processed a request.');
 
     // const name = (req.query.name || (req.body && req.body.name));
@@ -14,8 +15,8 @@ module.exports = async function (context, req) {
     //     }
     //     res.status(200).json({ message: 'Data appended successfully' });
     //   });
-    // context.res = {
-    //     // status: 200, /* Defaults to 200 */
-    //     body: responseMessage
-    // };
+    context.res = {
+        // status: 200, /* Defaults to 200 */
+        body: name
+    };
 }
