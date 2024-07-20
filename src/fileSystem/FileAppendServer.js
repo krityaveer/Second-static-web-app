@@ -25,14 +25,14 @@ const FileAppendServer = () => {
       });
 
       if (response.ok) {
-        setFeedback('Data submitted successfully.');
+       console.info('Data submitted successfully.');
         // Clear local storage on successful submission
       } else {
-        setFeedback('Failed to submit the form.');
+        console.log('Failed to submit the form.');
       }
     } catch (error) {
       console.error('Error submitting data:', error);
-      setFeedback('Error submitting data.');
+      // setFeedback('Error submitting data.');
     }
   };
 
