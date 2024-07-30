@@ -12,24 +12,28 @@ const FileAppendServer = () => {
     setEmail(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    //fetch('http://localhost:5000/append', {
-    fetch('api/append_data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.message);
-      })
-      .catch(error => {
-        console.error('There was an error appending the data!', error);
+    try {
+      const response = await fetch('api/append_data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(name, email),
       });
+
+      if (response.ok) {
+       console.info('Data submitted successfully.');
+        // Clear local storage on successful submission
+      } else {
+        console.log('Failed to submit the form.');
+      }
+    } catch (error) {
+      console.error('Error submitting data:', error);
+      // setFeedback('Error submitting data.');
+    }
   };
 
   return (
