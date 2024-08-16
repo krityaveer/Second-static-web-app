@@ -22,7 +22,7 @@ const AzureAppender = () => {
         Name: name,
         Email: email
       };
-      const endpoint = 'http://localhost:4280/data-api/rest/Person'
+      const endpoint = 'data-api/rest/Person'
       const response = await fetch(`${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
