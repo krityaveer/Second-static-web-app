@@ -7,9 +7,9 @@
     "test": "echo \"No tests yet...\""
   },
   "devDependencies": {
-    "@azure/functions": "^4.3.0"
+    "@azure/functions": "^4.5.0"
   },
-  "main": "index.js",
+  "main": "append_data/index.js",
   "author": "",
   "license": "ISC"
 }

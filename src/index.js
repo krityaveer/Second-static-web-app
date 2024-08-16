@@ -6,15 +6,16 @@ import reportWebVitals from './reportWebVitals';
 // import FileComponent from './fileSystem/FileComponent';
 // import FileAppender from './fileSystem/FileAppender';
 import FileAppendServer from './fileSystem/FileAppendServer';
-
+import AzureAppender from './fileSystem/AzureAppender';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
     {/* <FileAppender />
     <FileComponent /> */}
-
-    <FileAppendServer/>
+    <div><FileAppendServer/> </div>
+    
+    <div id="azure-appender"><AzureAppender/></div>
         <App />
   </React.StrictMode>
 );

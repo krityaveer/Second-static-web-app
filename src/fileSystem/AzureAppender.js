@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FileAppendServer = () => {
+const AzureAppender = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
@@ -16,16 +16,35 @@ const FileAppendServer = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:7071/api/append_data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(name, email),
+      
+      //const id = 2;
+      const data = {
+        Name: name,
+        Email: email
+      };
+      const endpoint = 'http://localhost:4280/data-api/rest/Person'
+      const response = await fetch(`${endpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
       });
 
-      if (response.ok) {
+
+
+      // const response = await fetch('http://localhost:4280/data-api/rest/Person', {
+      //   // method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   //body: JSON.stringify(name, email),
+        
+      
+      // });
+      const rvalue = await response.json();
+      console.table(rvalue.value);
+      if (response.ok) { 
        console.info('Data submitted successfully.');
+       console.log(rvalue.value)
         // Clear local storage on successful submission
       } else {
         console.log('Failed to submit the form.');
@@ -38,7 +57,7 @@ const FileAppendServer = () => {
 
   return (
     <div>
-      <h1>File Appender</h1>
+      <h1>AzureAppender</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -70,4 +89,4 @@ const FileAppendServer = () => {
   );
 };
 
-export default FileAppendServer;
+export default AzureAppender;
